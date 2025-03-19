@@ -1,0 +1,54 @@
+---
+import background from '../assets/background.svg';
+import teaLogo from '../assets/tea2.svg';
+import Menu from '../components/Hamburger.astro';
+---
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="../public/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Formosa Tea</title>
+	</head>
+	<body>
+		<img id="background" src={background.src} alt="" fetchpriority="high" />
+		<a href="/"
+				><img src={teaLogo.src} width="400" height="400" alt="Peppa's tea party" /></a>
+		<Menu />
+		<slot />
+	</body>
+</html>
+
+<style>
+	html {
+		color: #695651;
+		font-family: HelveticaNeue-Light,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,sans-serif;
+		height: 100%;
+		font-size: 1rem;
+		font-weight: 400;
+		letter-spacing: .075rem;
+		line-height: 1.5;
+		text-align: center;
+		padding: 20px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	},
+	body {
+		margin: 0;
+		width: 100%;
+		height: 100%;
+	}
+	#background {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+		filter: blur(80px);
+	}
+</style>
