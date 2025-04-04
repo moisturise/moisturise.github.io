@@ -1,6 +1,6 @@
 ---
 import background from '../assets/background.svg';
-import teaLogo from '../assets/tea2.svg';
+import teaLogo from '../assets/tea.svg';
 import Menu from '../components/Hamburger.astro';
 ---
 <!doctype html>
@@ -13,7 +13,7 @@ import Menu from '../components/Hamburger.astro';
 		<meta name="generator" content={Astro.generator} />
 		<title>Formosa Tea</title>
 	</head>
-	<body>
+	<body style="background-color:#171c27;"> <!-- #F2F0EF -->
 		<img id="background" src={background.src} alt="" fetchpriority="high" />
 		<a href="/"
 				><img src={teaLogo.src} width="400" height="400" alt="Formosa Tea" /></a>
@@ -27,7 +27,8 @@ import Menu from '../components/Hamburger.astro';
 		align-items: center;
 	}
 	body {
-		color: #695651;
+		/* color: #695651;  */
+		color: #e6fbf1;
 		font-family: HelveticaNeue-Light,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,sans-serif;
 		height: 80vh auto;
 		width: calc(100% -2em);
@@ -36,7 +37,7 @@ import Menu from '../components/Hamburger.astro';
 		font-weight: 400;
 		letter-spacing: .075rem;
 		line-height: 1.5;
-		padding: 30px;
+		padding: 80px;
 		text-align: center;
 		display: flex;
 		justify-content: center;
