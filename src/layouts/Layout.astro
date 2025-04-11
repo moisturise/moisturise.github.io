@@ -8,10 +8,11 @@ import Menu from '../components/Hamburger.astro';
 	<head>
 		<link rel="sitemap" href="/sitemap-index.xml" />
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Formosa Tea</title>
+		<meta name="description" content="Fermented tea from Taiwan. Based in SE23 London.">
+		<title>Loose leaf oolong & more in SE London - Formosa Tea</title>
 	</head>
 	<body style="background-color:#171c27;">
 		<img id="background" src={background.src} alt="" fetchpriority="high" />
@@ -58,3 +59,25 @@ import Menu from '../components/Hamburger.astro';
 		filter: blur(80px);
 	}
 </style>
+
+<script type="application/ld+json">
+	{
+		"@context": "http://schema.org",
+		"@type": "LocalBusiness",
+		"name": "Formosa Tea",
+		"description": "Oolong & more fermented tea from Taiwan. Based in SE23 London",
+		"url": "https://formosatea.club",
+		"logo": "https://formosatea.club/_astro/tea.pmoBmg3j.svg",
+		"email": "hello@formosatea.club",
+		"sameAs" : [
+			"https://www.instagram.com/formosatea.club"
+		],
+		"contactPoint" : [
+			{
+				"@type" : "ContactPoint",
+				"email": "hello@formosatea.club",
+				"url": "https://formosatea.club"
+			}
+		]
+	}
+</script>
