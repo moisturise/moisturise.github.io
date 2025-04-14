@@ -1,33 +1,125 @@
 ---
 import Layout from '../layouts/Layout.astro';
 ---
-<Layout>
-    <br>
-    <b>Forager's Delight</b>
-    <br>Origin: Liugui, Kaohsiung, Taiwan | Altitude: 1400 metres above sea level
-    <br><i>This white tea is made of a native Taiwanese tea species, Camellia formosensis, that is foraged in the mountains rather than harvested at a farm. A velvety mouthfeel with a brush of sweetness, this bright and delicate tea has gentle earthy aromas of mint and cinnamon.</i>
-    <br>
-    <br>
-    <br>
-    <b>Winter Harvest</b>
-    <br>Origin: Mingjian, Nantou, Taiwan | Altitude: 300-600 metres above sea level
-    <br><i>Grown from the red laterite soil in Nantou, Taiwan, this healing Sijichun oolong tea is natually sweet with silky low tannins. Floral, elegant and balanced.</i>
-    <br>
-    <br>
-    <br>
-    <b>Sweet Pearls</b>
-    <br>Origin: Alishan, Chiayi, Taiwan | Altitude: 800-1000 metres above sea level
-    <br><i>This Jin Xuan milk oolong tea is from the most celebrated tea region of Taiwan - the mist-shrouded Alishan. Lightly toasted, with hints of molasses and sweet popcorn, .</i>
-    <br>
-    <br>
-    <br>
-    <b>Icy Peak</b>
-    <br>Origin: Lugu, Nantou, Taiwan | Altitude: 600-800 metres above sea level
-    <br><i>Roasted, full-bodied and warming, this Dong Ding oolong tea serves a long finish of lingering sweetness reminiscent of honey, cacao, and melon.</i>
-    <br>
-    <br>
-    <br>
-    <b>Amber Twists</b>
-    <br>Origin: Lalashan, Taoyuan, Taiwan | Altitude: 1600 metres above sea level
-    <br><i>The full fermentation highlights an warming scent of cypress that forms a dense canopy over Lalashan. A dry and light opening leaves aromas of mellow ripe tree fruit.</i>
+<Layout title="Our Teas">
+  <section class="tea-collection">
+
+    <article class="tea-item">
+      <h2 class="tea-name">Forager’s Delight</h2>
+      <p class="tea-origin">Origin: Liugui, Kaohsiung, Taiwan | Altitude: 1,400 metres above sea level</p>
+      <p class="tea-scene">Early spring in the forest, soft light through the canopy.</p>
+      <p class="tea-description">
+        Foraged from wild <em>Camellia formosensis</em>, this delicate white tea offers a silky infusion with hints of mint, cinnamon, and warm earth. Ideal for languorous mornings or quiet afternoon walks.
+      </p>
+      <p class="tea-pairing">
+        <strong>Seasonal pairing:</strong> Steamed white fish with herbs, fresh goat’s cheese, or spring greens and sesame.
+      </p>
+    </article>
+
+    <article class="tea-item">
+      <h2 class="tea-name">Winter Harvest</h2>
+      <p class="tea-origin">Origin: Mingjian, Nantou, Taiwan | Altitude: 300–600 metres above sea level</p>
+      <p class="tea-scene">Autumn air, windows cracked, the scent of fallen leaves.</p>
+      <p class="tea-description">
+        Grown in red laterite soil and picked in the cooler months, this <em>Sijichun</em> oolong is naturally sweet, floral, and silky. A gently restorative tea to clear the air.
+      </p>
+      <p class="tea-pairing">
+        <strong>Seasonal pairing:</strong> Roasted pumpkin, soba noodles with sesame oil, or spiced poached pears.
+      </p>
+    </article>
+
+    <article class="tea-item">
+      <h2 class="tea-name">Sweet Pearls</h2>
+      <p class="tea-origin">Origin: Alishan, Chiayi, Taiwan | Altitude: 800–1,000 metres above sea level</p>
+      <p class="tea-scene">Summer afternoons, golden light, laughter in the background.</p>
+      <p class="tea-description">
+        This <em>Jin Xuan</em> milk oolong from Alishan is creamy and light, with notes of sweet popcorn, toasted grain, and molasses. Joyful and comforting, with a soft finish.
+      </p>
+      <p class="tea-pairing">
+        <strong>Seasonal pairing:</strong> Buttered corn, grilled peaches, or almond cookies.
+      </p>
+    </article>
+
+    <article class="tea-item">
+      <h2 class="tea-name">Icy Peak</h2>
+      <p class="tea-origin">Origin: Lugu, Nantou, Taiwan | Altitude: 600–800 metres above sea level</p>
+      <p class="tea-scene">Deep winter evening, vinyl playing low, soft wool, warm hands.</p>
+      <p class="tea-description">
+        A roasted <em>Dong Ding</em> oolong that’s smoky and full-bodied, with a long, warming finish. Notes of honey, cacao, and ripe melon unfold slowly over each infusion.
+      </p>
+      <p class="tea-pairing">
+        <strong>Seasonal pairing:</strong> Dark chocolate, braised meats, or roasted chestnuts.
+      </p>
+    </article>
+
+    <article class="tea-item">
+      <h2 class="tea-name">Amber Twists</h2>
+      <p class="tea-origin">Origin: Lalashan, Taoyuan, Taiwan | Altitude: 1,600 metres above sea level</p>
+      <p class="tea-scene">Late summer dusk, mist curling through old trees.</p>
+      <p class="tea-description">
+        Fully fermented and grown beneath Lalashan’s forest canopy, this tea opens with a dry, woodsy note before revealing mellow orchard fruit and soft cypress warmth.
+      </p>
+      <p class="tea-pairing">
+        <strong>Seasonal pairing:</strong> Grilled plums, mushroom broth, or aged cheese.
+      </p>
+    </article>
+
+  </section>
+
+  <style>
+    .tea-collection {
+      font-family: 'Helvetica Neue', sans-serif;
+      color: #b2d8c8; /* soft green base */
+      line-height: 1.7;
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+
+    .tea-item {
+      margin-bottom: 3rem;
+      border-bottom: 1px solid #325144;
+      padding-bottom: 2rem;
+    }
+
+    .tea-name {
+      font-size: 1.6rem;
+      font-weight: bold;
+      color: #e6fbf1; /* primary light green accent */
+      margin-bottom: 0.25rem;
+    }
+
+    .tea-origin {
+      font-style: italic;
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+      color: #a0cabc;
+    }
+
+    .tea-scene {
+      font-weight: 500;
+      color: #d1f5e3;
+      margin-bottom: 0.75rem;
+    }
+
+    .tea-description {
+      margin-bottom: 1rem;
+      color: #c1e8da;
+    }
+
+    .tea-pairing {
+      font-size: 0.95rem;
+      color: #aee7d0;
+    }
+
+    .tea-pairing strong {
+      font-weight: 600;
+      color: #e6fbf1;
+    }
+
+    em {
+      font-style: italic;
+      color: #e6fbf1;
+    }
+  </style>
 </Layout>
