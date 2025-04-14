@@ -1,6 +1,21 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const title = 'About';
 ---
-<Layout>
-    Loose leaf oolong tea from Taiwan. Based in SE London, UK.
+
+<Layout title={title}>
+  <section class="prose max-w-2xl mx-auto px-4 py-16 text-[#e6fbf1]">
+    <p>
+      Loose leaf oolong tea from Taiwan. Based in southeast London, UK.
+    </p>
+
+    <p>
+      Focused on small-batch harvests, natural cultivation, and native cultivars.
+    </p>
+
+    <p>
+      Quietly made for steady drinking.
+    </p>
+  </section>
 </Layout>
