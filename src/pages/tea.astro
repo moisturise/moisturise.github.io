@@ -1,182 +1,218 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 ---
-<!doctype html>
-<html lang="en">
-	<head>
-        <script type="application/ld+json">
-            {
-              "@context": "https://schema.org",
-              "@graph": [
-                {
-                  "@type": "Product",
-                  "name": "Forager's Delight",
-                  "description": "A delicate white tea foraged from native Camellia formosensis in Liugui, Taiwan. Velvety with notes of mint and cinnamon.",
-                  "brand": {
-                    "@type": "Brand",
-                    "name": "Formosa Tea"
-                  }
-                },
-                {
-                  "@type": "Product",
-                  "name": "Winter Harvest",
-                  "description": "A naturally sweet Sijichun oolong from Nantou with floral and elegant notes. Grown in red laterite soil.",
-                  "brand": {
-                    "@type": "Brand",
-                    "name": "Formosa Tea"
-                  }
-                },
-                {
-                  "@type": "Product",
-                  "name": "Sweet Pearls",
-                  "description": "A Jin Xuan milk oolong from Alishan, with notes of molasses and sweet popcorn. Creamy and comforting.",
-                  "brand": {
-                    "@type": "Brand",
-                    "name": "Formosa Tea"
-                  }
-                },
-                {
-                  "@type": "Product",
-                  "name": "Icy Peak",
-                  "description": "A roasted Dong Ding oolong from Lugu. Smoky and full-bodied with notes of honey, cacao, and melon.",
-                  "brand": {
-                    "@type": "Brand",
-                    "name": "Formosa Tea"
-                  }
-                },
-                {
-                  "@type": "Product",
-                  "name": "Amber Twists",
-                  "description": "A fully fermented tea from Lalashan. Dry opening with mellow orchard fruit and a cypress warmth.",
-                  "brand": {
-                    "@type": "Brand",
-                    "name": "Formosa Tea"
-                  }
-                }
-              ]
-            }
-            </script>            
-    </head>
-</html>
+
 <Layout title="Our Teas">
-  <section class="tea-collection">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@graph": [
+                {
+                    "@type": "Product",
+                    "name": "Forager's Delight",
+                    "description": "A delicate white tea foraged from native Camellia formosensis in Liugui, Taiwan. Velvety with notes of mint and cinnamon.",
+                    "brand": {
+                        "@type": "Brand",
+                        "name": "Formosa Tea"
+                    }
+                },
+                {
+                    "@type": "Product",
+                    "name": "Winter Harvest",
+                    "description": "A naturally sweet Sijichun oolong from Nantou with floral and elegant notes. Grown in red laterite soil.",
+                    "brand": {
+                        "@type": "Brand",
+                        "name": "Formosa Tea"
+                    }
+                },
+                {
+                    "@type": "Product",
+                    "name": "Sweet Pearls",
+                    "description": "A Jin Xuan milk oolong from Alishan, with notes of molasses and sweet popcorn. Creamy and comforting.",
+                    "brand": {
+                        "@type": "Brand",
+                        "name": "Formosa Tea"
+                    }
+                },
+                {
+                    "@type": "Product",
+                    "name": "Icy Peak",
+                    "description": "A roasted Dong Ding oolong from Lugu. Smoky and full-bodied with notes of honey, cacao, and melon.",
+                    "brand": {
+                        "@type": "Brand",
+                        "name": "Formosa Tea"
+                    }
+                },
+                {
+                    "@type": "Product",
+                    "name": "Amber Twists",
+                    "description": "A fully fermented tea from Lalashan. Dry opening with mellow orchard fruit and a cypress warmth.",
+                    "brand": {
+                        "@type": "Brand",
+                        "name": "Formosa Tea"
+                    }
+                }
+            ]
+        }
+    </script>
+    <section class="tea-collection">
+        <article class="tea-item">
+            <h2 class="tea-name">Forager's Delight</h2>
+            <p class="tea-origin">
+                Origin: Liugui, Kaohsiung, Taiwan | Altitude: 1,400 metres above
+                sea level
+            </p>
+            <p class="tea-scene">
+                Early spring in the forest, soft light through the curtains.
+            </p>
+            <p class="tea-description">
+                Foraged from wild <em>Camellia formosensis</em>, this delicate
+                white tea offers a silky infusion with earthy hints of mint and
+                cinnamon. Ideal for languorous mornings or quiet afternoon
+                walks.
+            </p>
+            <p class="tea-pairing">
+                <strong>Seasonal pairing:</strong> Steamed white fish with herbs,
+                fresh goat's cheese, or spring greens and sesame.
+            </p>
+        </article>
 
-    <article class="tea-item">
-      <h2 class="tea-name">Forager's Delight</h2>
-      <p class="tea-origin">Origin: Liugui, Kaohsiung, Taiwan | Altitude: 1,400 metres above sea level</p>
-      <p class="tea-scene">Early spring in the forest, soft light through the curtains.</p>
-      <p class="tea-description">
-        Foraged from wild <em>Camellia formosensis</em>, this delicate white tea offers a silky infusion with earthy hints of mint and cinnamon. Ideal for languorous mornings or quiet afternoon walks.
-      </p>
-      <p class="tea-pairing">
-        <strong>Seasonal pairing:</strong> Steamed white fish with herbs, fresh goat's cheese, or spring greens and sesame.
-      </p>
-    </article>
+        <article class="tea-item">
+            <h2 class="tea-name">Winter Harvest</h2>
+            <p class="tea-origin">
+                Origin: Mingjian, Nantou, Taiwan | Altitude: 300-600 metres
+                above sea level
+            </p>
+            <p class="tea-scene">
+                Autumn air, windows cracked, the scent of fallen leaves.
+            </p>
+            <p class="tea-description">
+                Grown in red laterite soil and picked in the cooler months, this <em
+                    >Sijichun</em
+                > oolong is naturally sweet, floral, and silky. A gently restorative
+                tea to clear the air.
+            </p>
+            <p class="tea-pairing">
+                <strong>Seasonal pairing:</strong> Roasted pumpkin, soba noodles
+                with sesame oil, or spiced poached pears.
+            </p>
+        </article>
 
-    <article class="tea-item">
-      <h2 class="tea-name">Winter Harvest</h2>
-      <p class="tea-origin">Origin: Mingjian, Nantou, Taiwan | Altitude: 300-600 metres above sea level</p>
-      <p class="tea-scene">Autumn air, windows cracked, the scent of fallen leaves.</p>
-      <p class="tea-description">
-        Grown in red laterite soil and picked in the cooler months, this <em>Sijichun</em> oolong is naturally sweet, floral, and silky. A gently restorative tea to clear the air.
-      </p>
-      <p class="tea-pairing">
-        <strong>Seasonal pairing:</strong> Roasted pumpkin, soba noodles with sesame oil, or spiced poached pears.
-      </p>
-    </article>
+        <article class="tea-item">
+            <h2 class="tea-name">Sweet Pearls</h2>
+            <p class="tea-origin">
+                Origin: Alishan, Chiayi, Taiwan | Altitude: 800-1,000 metres
+                above sea level
+            </p>
+            <p class="tea-scene">
+                Summer afternoons, golden light, laughter in the background.
+            </p>
+            <p class="tea-description">
+                This <em>Jin Xuan</em> milk oolong from Alishan is creamy and light,
+                with notes of sweet popcorn, toasted grain, and molasses. A comforting
+                and joyful finish.
+            </p>
+            <p class="tea-pairing">
+                <strong>Seasonal pairing:</strong> Buttered corn, grilled peaches,
+                or almond cookies.
+            </p>
+        </article>
 
-    <article class="tea-item">
-      <h2 class="tea-name">Sweet Pearls</h2>
-      <p class="tea-origin">Origin: Alishan, Chiayi, Taiwan | Altitude: 800-1,000 metres above sea level</p>
-      <p class="tea-scene">Summer afternoons, golden light, laughter in the background.</p>
-      <p class="tea-description">
-        This <em>Jin Xuan</em> milk oolong from Alishan is creamy and light, with notes of sweet popcorn, toasted grain, and molasses. A comforting and joyful finish.
-      </p>
-      <p class="tea-pairing">
-        <strong>Seasonal pairing:</strong> Buttered corn, grilled peaches, or almond cookies.
-      </p>
-    </article>
+        <article class="tea-item">
+            <h2 class="tea-name">Icy Peak</h2>
+            <p class="tea-origin">
+                Origin: Lugu, Nantou, Taiwan | Altitude: 600-800 metres above
+                sea level
+            </p>
+            <p class="tea-scene">
+                Deep winter evening, vinyl playing low, soft wool, warm hands.
+            </p>
+            <p class="tea-description">
+                A roasted <em>Dong Ding</em> oolong thats smoky and full-bodied,
+                with a long finish. Notes of honey, cacao, and ripe melon unfold
+                slowly over each infusion.
+            </p>
+            <p class="tea-pairing">
+                <strong>Seasonal pairing:</strong> Dark chocolate, braised meats,
+                or roasted chestnuts.
+            </p>
+        </article>
 
-    <article class="tea-item">
-      <h2 class="tea-name">Icy Peak</h2>
-      <p class="tea-origin">Origin: Lugu, Nantou, Taiwan | Altitude: 600-800 metres above sea level</p>
-      <p class="tea-scene">Deep winter evening, vinyl playing low, soft wool, warm hands.</p>
-      <p class="tea-description">
-        A roasted <em>Dong Ding</em> oolong thats smoky and full-bodied, with a long finish. Notes of honey, cacao, and ripe melon unfold slowly over each infusion.
-      </p>
-      <p class="tea-pairing">
-        <strong>Seasonal pairing:</strong> Dark chocolate, braised meats, or roasted chestnuts.
-      </p>
-    </article>
+        <article class="tea-item">
+            <h2 class="tea-name">Amber Twists</h2>
+            <p class="tea-origin">
+                Origin: Lalashan, Taoyuan, Taiwan | Altitude: 1,600 metres above
+                sea level
+            </p>
+            <p class="tea-scene">
+                Late summer dusk, mist curling through old trees.
+            </p>
+            <p class="tea-description">
+                Fully fermented and grown beneath Lalashan's forest canopy, this
+                tea opens with a dry, woody note before revealing mellow orchard
+                fruit and soft cypress needles.
+            </p>
+            <p class="tea-pairing">
+                <strong>Seasonal pairing:</strong> Grilled plums, mushroom broth,
+                or aged cheese.
+            </p>
+        </article>
+    </section>
 
-    <article class="tea-item">
-      <h2 class="tea-name">Amber Twists</h2>
-      <p class="tea-origin">Origin: Lalashan, Taoyuan, Taiwan | Altitude: 1,600 metres above sea level</p>
-      <p class="tea-scene">Late summer dusk, mist curling through old trees.</p>
-      <p class="tea-description">
-        Fully fermented and grown beneath Lalashan's forest canopy, this tea opens with a dry, woody note before revealing mellow orchard fruit and soft cypress needles.
-      </p>
-      <p class="tea-pairing">
-        <strong>Seasonal pairing:</strong> Grilled plums, mushroom broth, or aged cheese.
-      </p>
-    </article>
+    <style>
+        .tea-collection {
+            font-family: "Helvetica Neue", sans-serif;
+            color: #b2d8c8; /* soft green base */
+            line-height: 1.7;
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
 
-  </section>
+        .tea-item {
+            margin-bottom: 3rem;
+            border-bottom: 1px solid #325144;
+            padding-bottom: 2rem;
+        }
 
-  <style>
-    .tea-collection {
-      font-family: 'Helvetica Neue', sans-serif;
-      color: #b2d8c8; /* soft green base */
-      line-height: 1.7;
-      max-width: 700px;
-      margin: 0 auto;
-      padding: 2rem 1rem;
-    }
+        .tea-name {
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: #e6fbf1; /* primary light green accent */
+            margin-bottom: 0.25rem;
+        }
 
-    .tea-item {
-      margin-bottom: 3rem;
-      border-bottom: 1px solid #325144;
-      padding-bottom: 2rem;
-    }
+        .tea-origin {
+            font-style: italic;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            color: #a0cabc;
+        }
 
-    .tea-name {
-      font-size: 1.6rem;
-      font-weight: bold;
-      color: #e6fbf1; /* primary light green accent */
-      margin-bottom: 0.25rem;
-    }
+        .tea-scene {
+            font-weight: 500;
+            color: #d1f5e3;
+            margin-bottom: 0.75rem;
+        }
 
-    .tea-origin {
-      font-style: italic;
-      font-size: 0.95rem;
-      margin-bottom: 1rem;
-      color: #a0cabc;
-    }
+        .tea-description {
+            margin-bottom: 1rem;
+            color: #c1e8da;
+        }
 
-    .tea-scene {
-      font-weight: 500;
-      color: #d1f5e3;
-      margin-bottom: 0.75rem;
-    }
+        .tea-pairing {
+            font-size: 0.95rem;
+            color: #aee7d0;
+        }
 
-    .tea-description {
-      margin-bottom: 1rem;
-      color: #c1e8da;
-    }
+        .tea-pairing strong {
+            font-weight: 600;
+            color: #e6fbf1;
+        }
 
-    .tea-pairing {
-      font-size: 0.95rem;
-      color: #aee7d0;
-    }
-
-    .tea-pairing strong {
-      font-weight: 600;
-      color: #e6fbf1;
-    }
-
-    em {
-      font-style: italic;
-      color: #e6fbf1;
-    }
-  </style>
+        em {
+            font-style: italic;
+            color: #e6fbf1;
+        }
+    </style>
 </Layout>

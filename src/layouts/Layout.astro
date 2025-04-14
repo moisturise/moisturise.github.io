@@ -1,8 +1,9 @@
 ---
-import background from '../assets/background.svg';
-import teaLogo from '../assets/tea.svg';
-import Menu from '../components/Hamburger.astro';
+import background from "../assets/background.svg";
+import teaLogo from "../assets/tea.svg";
+import Menu from "../components/Hamburger.astro";
 ---
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -11,13 +12,22 @@ import Menu from '../components/Hamburger.astro';
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<meta name="description" content="Fermented tea from Taiwan. Based in SE23 London.">
+		<meta
+			name="description"
+			content="Fermented tea from Taiwan. Based in SE23 London."
+		/>
 		<title>Loose leaf oolong & more in SE London - Formosa Tea</title>
 	</head>
 	<body style="background-color:#171c27;">
 		<img id="background" src={background.src} alt="" fetchpriority="high" />
 		<a href="/"
-				><img src={teaLogo.src} width="400" height="400" alt="Formosa Tea" /></a>
+			><img
+				src={teaLogo.src}
+				width="400"
+				height="400"
+				alt="Formosa Tea"
+			/></a
+		>
 		<Menu />
 		<slot />
 	</body>
@@ -29,13 +39,14 @@ import Menu from '../components/Hamburger.astro';
 	}
 	body {
 		color: #e6fbf1;
-		font-family: HelveticaNeue-Light,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,sans-serif;
+		font-family: HelveticaNeue-Light, "Helvetica Neue Light",
+			"Helvetica Neue", Helvetica, Arial, sans-serif;
 		height: 80vh auto;
 		width: calc(100% -2em);
 		max-width: 100%;
 		font-size: 1rem;
 		font-weight: 400;
-		letter-spacing: .075rem;
+		letter-spacing: 0.075rem;
 		line-height: 1.5;
 		padding: 30px;
 		text-align: center;
@@ -69,12 +80,10 @@ import Menu from '../components/Hamburger.astro';
 		"url": "https://formosatea.club",
 		"logo": "https://formosatea.club/_astro/tea.pmoBmg3j.svg",
 		"email": "hello@formosatea.club",
-		"sameAs" : [
-			"https://www.instagram.com/formosatea.club"
-		],
-		"contactPoint" : [
+		"sameAs": ["https://www.instagram.com/formosatea.club"],
+		"contactPoint": [
 			{
-				"@type" : "ContactPoint",
+				"@type": "ContactPoint",
 				"email": "hello@formosatea.club",
 				"url": "https://formosatea.club"
 			}
