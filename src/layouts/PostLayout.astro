@@ -9,8 +9,18 @@ const { frontmatter } = Astro.props;
       <title>{frontmatter.title}</title>
     </head>
     <body>
-      <h1>{frontmatter.title}</h1>
+      <hgroup>
+        <h1>{frontmatter.title}</h1>
+        <p class="blog-description">{frontmatter.description}</p>
+      </hgroup>
+      <br>
       <slot />
     </body>
   </html>
 </Layout>
+
+<style>
+.blog-description {
+    font-style: italic;
+}
+</style>
