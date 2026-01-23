@@ -1,4 +1,5 @@
 ---
+import '../styles/global.css';
 import background from "../assets/background.svg";
 import teaLogo from "../assets/tea.svg";
 import Menu from "../components/Hamburger.astro";
@@ -29,47 +30,11 @@ import Menu from "../components/Hamburger.astro";
 			/></a
 		>
 		<Menu />
-		<slot />
+		<main class="page">
+  			<slot />
+		</main>
 	</body>
 </html>
-
-<style>
-	html {
-		align-items: center;
-	}
-	body {
-		color: #e6fbf1;
-		font-family: HelveticaNeue-Light, "Helvetica Neue Light",
-			"Helvetica Neue", Helvetica, Arial, sans-serif;
-		height: 80vh auto;
-		width: calc(100% -2em);
-		max-width: 100%;
-		font-size: 1rem;
-		font-weight: 400;
-		letter-spacing: 0.075rem;
-		line-height: 1.5;
-		padding: 30px;
-		text-align: center;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		flex-direction: column;
-		margin-top: 80px;
-	}
-	img {
-		align-self: center;
-		width: 100%;
-	}
-	#background {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		z-index: -1;
-		filter: blur(80px);
-	}
-</style>
 
 <script type="application/ld+json">
 	{
