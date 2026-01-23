@@ -1,11 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import img_a01 from "../assets/a01.jpg";
 
 const title = "Posts";
 const posts = [
     {
         title: "The Calming Practice of Oolong Tea",
-        image: "src/assets/a01.jpg",
+        image: img_a01,
         slug: "/posts/calmingpractice",
         date: "23 Jan 2026"
     }
@@ -120,7 +121,7 @@ const posts = [
         {posts.map((post) => (
             <a href={post.slug} class="post-card">
             <img 
-                src={post.image} 
+                src={post.image.src} 
                 alt={post.title}
                 class="post-image"
                 loading="lazy"
