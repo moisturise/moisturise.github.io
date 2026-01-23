@@ -6,7 +6,6 @@ body {
     font-weight: 400;
     letter-spacing: 0.075rem;
     line-height: 1.5;
-    margin-top: 80px;
 }
 
 ul {
@@ -31,8 +30,8 @@ a {
 }
 
 .page {
-    max-width: 72ch;
-    padding: 0 30px;
+    max-width: 100%;
+    padding: 0 10% 0;
     max-width: 100%;
     margin: 0 auto;
 }
@@ -43,8 +42,10 @@ a {
 
 img {
     max-width: 100%;
-    margin: auto;
+    margin: 0 auto;
     display: block;
+    width: auto;
+    height: auto;
 }
 
 #background {
@@ -55,4 +56,8 @@ img {
     height: 100%;
     z-index: -1;
     filter: blur(80px);
+}
+
+#teaLogo {
+    margin: 0 auto
 }

@@ -1,13 +1,13 @@
 ---
 layout: ../../layouts/PostLayout.astro
 title: "The Calming Practice of Oolong Tea"
-description: "An exploration of how fermented oolong tea supports mental clarity through flavour, aroma, and a brewing ritual."
+description: "An exploration of how fermented oolong tea supports mental clarity through flavour, aroma and a brewing ritual."
 pubDate: 2026-01-19
 author: "Formosa Tea Club"
 tags: ["oolong tea", "tea ritual", "fermentation", "mental clarity", "artisan tea", "sensory experience", "slow living"]
 
 ---
-
+<!-- ![Alt text](../../assets/a01.jpg "The Calming Practice of Oolong Tea") -->
 ## A Considered Ritual for Focus
 
 In a culture shaped by constant input and acceleration, mental clarity has become less about sharpness and more about organisation. Many people are not seeking more energy, but a form of attention that feels steady, composed, and sustainable.

@@ -6,7 +6,7 @@ import Menu from "../components/Hamburger.astro";
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en"  style="background-color:#171c27;">
 	<head>
 		<link rel="sitemap" href="/sitemap-index.xml" />
 		<meta charset="UTF-8" />
@@ -18,8 +18,7 @@ import Menu from "../components/Hamburger.astro";
 			content="Fermented tea from Taiwan. Based in SE23 London."
 		/>
 		<title>Fermented teas and rare brews, ethically sourced for the curious, creative palates - Formosa Tea Club</title>
-	</head>
-	<body style="background-color:#171c27;">
+		<br><br><br><br><br><br>
 		<img id="background" src={background.src} alt="" fetchpriority="high" />
 		<a href="/"
 			><img
@@ -28,9 +27,11 @@ import Menu from "../components/Hamburger.astro";
 				width="400"
 				height="400"
 				alt="Formosa Tea Club"
-			/></a
-		>
+			/></a>
+			<br>
 		<Menu />
+	</head>
+	<body>
 		<main class="page">
   			<slot />
 		</main>
