@@ -51,6 +51,11 @@ img {
     height: auto;
 }
 
+img[alt=SectionBreakTeaCup] {
+   width:60px;
+   /* margin: 0 */
+}
+
 #background {
     position: fixed;
     top: 0;
