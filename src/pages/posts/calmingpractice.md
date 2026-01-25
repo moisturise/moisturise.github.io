@@ -7,7 +7,6 @@ author: "Formosa Tea Club"
 tags: ["oolong tea", "tea ritual", "fermentation", "mental clarity", "artisan tea", "sensory experience", "slow living"]
 
 ---
-<!-- ![Alt text](../../assets/a01.jpg "The Calming Practice of Oolong Tea") -->
 ## A Considered Ritual for Focus
 
 In a culture shaped by constant input and acceleration, mental clarity has become less about sharpness and more about organisation. Many people are not seeking more energy, but a form of attention that feels steady, composed, and sustainable.
@@ -18,7 +17,7 @@ Neither green nor black, neither overtly stimulating nor sedating, oolong is def
 
 The clarity associated with oolong emerges through balance and repetition, not through force.
 
-<br>![SectionBreakTeaCup](../../../dist/favicon.svg)<br>
+<br>![SectionBreakTeaCup](../../../public/favicon.svg)<br>
 
 ## Focus without overstimulation
 
@@ -28,7 +27,7 @@ L-theanine moderates the impact of caffeine, encouraging a calm and attentive me
 
 This pairing of caffeine and L-theanine helps explain why tea has long been associated with intellectual and creative work. The mind is awake without becoming tense.
 
-<br>![SectionBreakTeaCup](../../../dist/favicon.svg)<br>
+<br>![SectionBreakTeaCup](../../../public/favicon.svg)<br>
 
 ## A measured energy curve
 
@@ -38,7 +37,7 @@ This creates a more even experience, with fewer spikes and fewer crashes. Polyph
 
 The mellow impact on heart rate and anxiety is noticeable over time, especially for people who are sensitive to stronger stimulants.
 
-<br>![SectionBreakTeaCup](../../../dist/favicon.svg)<br>
+<br>![SectionBreakTeaCup](../../../public/favicon.svg)<br>
 
 ## Aroma and attention
 
@@ -48,7 +47,7 @@ Fine oolongs are often defined by restrained but complex aromatic profiles: orch
 
 The sensory cue of the steam from a freshly poured cup naturally slows attention. It separates the moment of drinking from what came before it, creating a restorative transition rather than a disruption.
 
-<br>![SectionBreakTeaCup](../../../dist/favicon.svg)<br>
+<br>![SectionBreakTeaCup](../../../public/favicon.svg)<br>
 
 ## The ritual of preparation
 
@@ -66,7 +65,7 @@ When the tea is ready, pour it out completely into a shared serving vessel to en
 
 Waiting does not interrupt the process. It defines it.
 
-<br>![SectionBreakTeaCup](../../../dist/favicon.svg)<br>
+<br>![SectionBreakTeaCup](../../../public/favicon.svg)<br>
 
 ## Learning to taste
 
@@ -80,7 +79,7 @@ Flavour follows in layers rather than impact. Finally, observe the finish. Many 
 
 Across successive infusions, the tea evolves into a more composed and coherent expression.
 
-<br>![SectionBreakTeaCup](../../../dist/favicon.svg)<br>
+<br>![SectionBreakTeaCup](../../../public/favicon.svg)<br>
 
 ## Why oolong resonates now
 
@@ -88,4 +87,4 @@ Through craft, repetition, and attention rather than optimisation, oolong suppor
 
 By allowing attention to become more organised, less fragmented, and easier to sustain, this measured clarity feels less like an escape and more like a return to rhythm, proportion, and intent.
 
-<br>![SectionBreakTeaCup](../../../dist/favicon.svg)<br>
+<br>![SectionBreakTeaCup](../../../public/favicon.svg)<br>
