@@ -42,4 +42,8 @@ The result opens with a bright note of citrus, settles into something woody with
 
 Forager's Delight isn't a tea built for a rushed morning. It's silky rather than bold, delicate rather than assertive, and it rewards patience — both in the brewing and in the drinking. Given how limited the harvest is each year, and how much of its character depends on gentle handling from forest to cup, it's less a daily-drinker and more an occasion: a quiet walk, a slow morning, a moment set aside to actually pay attention to what's in the cup.
 
+[_Buy Forager's Delight here_][1]
+
+[1]: https://www.formosatea.club/tea "Explore our full collection"
+
 <br>![SectionBreakTeaCup](../../../public/favicon.svg)<br>
