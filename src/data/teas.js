@@ -25,7 +25,7 @@ export const teas = [
 	{
 		slug: "winter-harvest",
 		name: "Winter Harvest",
-		price: 22.0,
+		price: 8.0,
 		priceId: "price_REPLACE_ME_WINTER",
 		origin: "Mingjian, Nantou, Taiwan | Altitude: 300-600 metres above sea level",
 		scene: "Autumn air, windows cracked, the scent of fallen leaves.",
@@ -37,7 +37,7 @@ export const teas = [
 	{
 		slug: "sweet-pearls",
 		name: "Sweet Pearls",
-		price: 25.0,
+		price: 8.0,
 		priceId: "price_REPLACE_ME_PEARLS",
 		origin: "Alishan, Chiayi, Taiwan | Altitude: 800-1,000 metres above sea level",
 		scene: "Summer afternoons, golden shimmer, laughter in the background.",
@@ -49,7 +49,7 @@ export const teas = [
 	{
 		slug: "icy-peak",
 		name: "Icy Peak",
-		price: 26.0,
+		price: 9.0,
 		priceId: "price_REPLACE_ME_ICY",
 		origin: "Lugu, Nantou, Taiwan | Altitude: 600-800 metres above sea level",
 		scene: "Deep winter evening, vinyl playing low, soft wool, warm hands.",
@@ -61,7 +61,7 @@ export const teas = [
 	{
 		slug: "amber-twists",
 		name: "Amber Twists",
-		price: 28.0,
+		price: 12.0,
 		priceId: "price_REPLACE_ME_AMBER",
 		origin: "Lalashan, Taoyuan, Taiwan | Altitude: 1,600 metres above sea level",
 		scene: "Late summer dusk, mist curling through old trees.",

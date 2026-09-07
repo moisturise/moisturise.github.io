@@ -10,16 +10,20 @@
 ---
 
 <button id="cart-toggle" type="button" aria-label="Open basket">
-	Basket <span id="cart-count" hidden>0</span>
+	<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+		<path d="M6 8h12l-1 12H7L6 8z" />
+		<path d="M9 8V6a3 3 0 0 1 6 0v2" />
+	</svg>
+	<span id="cart-count" hidden>0</span>
 </button>
 
 <aside id="cart-drawer" aria-label="Shopping basket" hidden>
 	<div class="cart-header">
-		<h2>Your basket</h2>
+		<h2>Shopping bag</h2>
 		<button id="cart-close" type="button" aria-label="Close basket">&times;</button>
 	</div>
 
-	<p id="cart-empty">Your basket is empty.</p>
+	<p id="cart-empty">Your bag is empty.</p>
 	<ul id="cart-items"></ul>
 
 	<div class="cart-footer">
@@ -38,23 +42,32 @@
 		top: 1rem;
 		right: 1rem;
 		z-index: 20;
-		font-family: "Helvetica Neue", sans-serif;
-		background: #325144;
+		background: none;
+		border: none;
+		padding: 0.35rem;
 		color: #e6fbf1;
-		border: 1px solid #4c7a66;
-		border-radius: 6px;
-		padding: 0.5rem 0.9rem;
+		line-height: 0;
 		cursor: pointer;
 	}
+	#cart-toggle svg {
+		width: 28px;
+		height: 28px;
+		display: block;
+	}
 	#cart-count {
-		display: inline-block;
-		min-width: 1.4em;
-		margin-left: 0.25rem;
-		padding: 0 0.3em;
+		position: absolute;
+		top: -0.15rem;
+		right: -0.15rem;
+		min-width: 1.15rem;
+		height: 1.15rem;
+		padding: 0 0.25rem;
+		box-sizing: border-box;
 		border-radius: 999px;
 		background: #e6fbf1;
 		color: #171c27;
-		font-size: 0.85em;
+		font-size: 0.7rem;
+		font-weight: bold;
+		line-height: 1.15rem;
 		text-align: center;
 	}
 	#cart-drawer[hidden],
@@ -75,7 +88,6 @@
 		box-sizing: border-box;
 		display: flex;
 		flex-direction: column;
-		font-family: "Helvetica Neue", sans-serif;
 	}
 	.cart-header {
 		display: flex;
@@ -88,6 +100,8 @@
 		font-size: 1.2rem;
 		color: #e6fbf1;
 		margin: 0;
+		text-transform: uppercase;
+		letter-spacing: 0.075rem;
 	}
 	#cart-close {
 		background: none;
@@ -165,6 +179,8 @@
 		border-radius: 6px;
 		padding: 0.75rem;
 		cursor: pointer;
+		text-transform: uppercase;
+		letter-spacing: 00.075rem;
 	}
 	#cart-checkout:disabled {
 		opacity: 0.5;

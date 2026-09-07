@@ -16,17 +16,20 @@ const { slug, name, price } = Astro.props;
 	data-name={name}
 	data-price={price}
 >
-	Add to basket
+	Add to bag
 </button>
 
 <style is:global>
 	.add-to-cart {
 		font: inherit;
+		font-size: 0.8rem;
+		text-transform: uppercase;
+		letter-spacing: 0.075rem;
 		background: #325144;
 		color: #e6fbf1;
 		border: 1px solid #4c7a66;
-		border-radius: 6px;
-		padding: 0.5rem 1.1rem;
+		border-radius: 5px;
+		padding: 0.35rem 1rem;
 		cursor: pointer;
 		transition: background 0.2s ease;
 	}
