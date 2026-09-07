@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/PostLayout.astro
-title: "Forager's Delight: A Tea From a Species Older Thang Tea Farming"
+title: "Forager's Delight: A Tea From a Species Older Than Tea Farming"
 description: "Somewhere in the forested mountains above Liugui, Kaohsiung, at around 1,400 meters, there's a tree that most tea drinkers have never heard of - and almost certainly never tasted. It isn't a rare varietal of the tea plant everyone knows. It's a different species entirely."
 pubDate: 2026-09-07
 author: "Formosa Tea Club"
