@@ -66,6 +66,14 @@ const posts = [
         grid-template-columns: repeat(3, 1fr);
         gap: 3px;
       }
+      .container {
+        max-width: 100%;
+        padding: 0;
+        /* break out of the page's side padding, span the full screen width */
+        width: 100vw;
+        margin-left: 50%;
+        transform: translateX(-50%);
+      }
     }
 
     @media (max-width: 480px) {
