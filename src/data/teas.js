@@ -14,7 +14,7 @@ export const teas = [
 		slug: "foragers-delight",
 		name: "Forager's Delight",
 		price: 24.0,
-		priceId: "price_REPLACE_ME_FORAGERS",
+		priceId: "price_1UD5B0Fa3auY6YNontMmWEe8",
 		origin: "Liugui, Kaohsiung, Taiwan | Altitude: 1,400 metres above sea level",
 		scene: "Early spring in the forest, gentle glow through the curtains.",
 		description:
@@ -26,7 +26,7 @@ export const teas = [
 		slug: "winter-harvest",
 		name: "Winter Harvest",
 		price: 8.0,
-		priceId: "price_REPLACE_ME_WINTER",
+		priceId: "price_1UD27FFa3auY6YNoWAp6DGsI",
 		origin: "Mingjian, Nantou, Taiwan | Altitude: 300-600 metres above sea level",
 		scene: "Autumn air, windows cracked, the scent of fallen leaves.",
 		description:
@@ -38,7 +38,7 @@ export const teas = [
 		slug: "sweet-pearls",
 		name: "Sweet Pearls",
 		price: 8.0,
-		priceId: "price_REPLACE_ME_PEARLS",
+		priceId: "price_1UD25rFa3auY6YNo3MBYu5pv",
 		origin: "Alishan, Chiayi, Taiwan | Altitude: 800-1,000 metres above sea level",
 		scene: "Summer afternoons, golden shimmer, laughter in the background.",
 		description:
@@ -50,7 +50,7 @@ export const teas = [
 		slug: "icy-peak",
 		name: "Icy Peak",
 		price: 9.0,
-		priceId: "price_REPLACE_ME_ICY",
+		priceId: "price_1UD26OFa3auY6YNoyx6wRuiI",
 		origin: "Lugu, Nantou, Taiwan | Altitude: 600-800 metres above sea level",
 		scene: "Deep winter evening, vinyl playing low, soft wool, warm hands.",
 		description:
@@ -62,7 +62,7 @@ export const teas = [
 		slug: "amber-twists",
 		name: "Amber Twists",
 		price: 12.0,
-		priceId: "price_REPLACE_ME_AMBER",
+		priceId: "price_1UD28XFa3auY6YNowumoittd",
 		origin: "Lalashan, Taoyuan, Taiwan | Altitude: 1,600 metres above sea level",
 		scene: "Late summer dusk, mist curling through old trees.",
 		description:
