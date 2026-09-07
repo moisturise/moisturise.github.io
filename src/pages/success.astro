@@ -1,0 +1,21 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Thank you">
+	<section class="short-text-centre">
+		<h1>Thank you for your order</h1>
+		<p>
+			Your payment went through and a receipt is on its way to your email.
+			We'll be in touch about shipping your tea.
+		</p>
+		<p><a href="/tea">Back to the teas</a></p>
+	</section>
+
+	<!-- Order placed, so empty the basket. -->
+	<script>
+		try {
+			localStorage.removeItem("formosa-cart-v1");
+		} catch {}
+	</script>
+</Layout>

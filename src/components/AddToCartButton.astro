@@ -1,0 +1,36 @@
+---
+// A single "Add to basket" button. Carries the product's slug, name and display
+// price as data-* attributes; the cart script (in Cart.astro) picks these up via
+// event delegation, so no per-button JavaScript is needed.
+interface Props {
+	slug: string;
+	name: string;
+	price: number;
+}
+const { slug, name, price } = Astro.props;
+---
+<button
+	class="add-to-cart"
+	type="button"
+	data-add-to-cart={slug}
+	data-name={name}
+	data-price={price}
+>
+	Add to basket
+</button>
+
+<style is:global>
+	.add-to-cart {
+		font: inherit;
+		background: #325144;
+		color: #e6fbf1;
+		border: 1px solid #4c7a66;
+		border-radius: 6px;
+		padding: 0.5rem 1.1rem;
+		cursor: pointer;
+		transition: background 0.2s ease;
+	}
+	.add-to-cart:hover {
+		background: #3d6353;
+	}
+</style>

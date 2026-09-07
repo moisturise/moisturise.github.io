@@ -1,0 +1,329 @@
+---
+// Client-side shopping cart: a floating basket button + a slide-out drawer.
+// State lives in the browser (localStorage), so it works on a static site.
+// On "Checkout" it POSTs the basket to /api/checkout (a Cloudflare Pages
+// Function) which creates a Stripe Checkout Session and returns its URL.
+//
+// Included once in Layout.astro, so the cart is present and persists on every
+// page. "Add to basket" buttons anywhere on the site are wired up via event
+// delegation — see AddToCartButton.astro.
+---
+
+<button id="cart-toggle" type="button" aria-label="Open basket">
+	Basket <span id="cart-count" hidden>0</span>
+</button>
+
+<aside id="cart-drawer" aria-label="Shopping basket" hidden>
+	<div class="cart-header">
+		<h2>Your basket</h2>
+		<button id="cart-close" type="button" aria-label="Close basket">&times;</button>
+	</div>
+
+	<p id="cart-empty">Your basket is empty.</p>
+	<ul id="cart-items"></ul>
+
+	<div class="cart-footer">
+		<div class="cart-subtotal-row">
+			<span>Subtotal</span>
+			<span id="cart-subtotal">&pound;0.00</span>
+		</div>
+		<p class="cart-note">Shipping calculated at checkout.</p>
+		<button id="cart-checkout" type="button" disabled>Checkout</button>
+	</div>
+</aside>
+
+<style is:global>
+	#cart-toggle {
+		position: fixed;
+		top: 1rem;
+		right: 1rem;
+		z-index: 20;
+		font-family: "Helvetica Neue", sans-serif;
+		background: #325144;
+		color: #e6fbf1;
+		border: 1px solid #4c7a66;
+		border-radius: 6px;
+		padding: 0.5rem 0.9rem;
+		cursor: pointer;
+	}
+	#cart-count {
+		display: inline-block;
+		min-width: 1.4em;
+		margin-left: 0.25rem;
+		padding: 0 0.3em;
+		border-radius: 999px;
+		background: #e6fbf1;
+		color: #171c27;
+		font-size: 0.85em;
+		text-align: center;
+	}
+
+	#cart-drawer {
+		position: fixed;
+		top: 0;
+		right: 0;
+		z-index: 30;
+		width: min(360px, 90vw);
+		height: 100%;
+		background: #1f2733;
+		color: #c1e8da;
+		box-shadow: -6px 0 24px rgba(0, 0, 0, 0.4);
+		padding: 1.25rem;
+		box-sizing: border-box;
+		display: flex;
+		flex-direction: column;
+		font-family: "Helvetica Neue", sans-serif;
+	}
+	.cart-header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		border-bottom: 1px solid #325144;
+		padding-bottom: 0.75rem;
+	}
+	.cart-header h2 {
+		font-size: 1.2rem;
+		color: #e6fbf1;
+		margin: 0;
+	}
+	#cart-close {
+		background: none;
+		border: none;
+		color: #c1e8da;
+		font-size: 1.6rem;
+		line-height: 1;
+		cursor: pointer;
+	}
+	#cart-empty {
+		color: #a0cabc;
+		margin-top: 1.5rem;
+	}
+	#cart-items {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		overflow-y: auto;
+		flex: 1;
+	}
+	.cart-row {
+		display: grid;
+		grid-template-columns: 1fr auto auto;
+		align-items: center;
+		gap: 0.5rem;
+		padding: 0.75rem 0;
+		border-bottom: 1px solid #2a3a30;
+	}
+	.cart-row-name {
+		color: #e6fbf1;
+	}
+	.cart-qty {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.4rem;
+	}
+	.cart-qty button {
+		background: #325144;
+		color: #e6fbf1;
+		border: none;
+		border-radius: 4px;
+		width: 1.6rem;
+		height: 1.6rem;
+		cursor: pointer;
+		font-size: 1rem;
+		line-height: 1;
+	}
+	.cart-row-price {
+		min-width: 4.5rem;
+		text-align: right;
+		color: #d1f5e3;
+	}
+	.cart-footer {
+		border-top: 1px solid #325144;
+		padding-top: 0.75rem;
+	}
+	.cart-subtotal-row {
+		display: flex;
+		justify-content: space-between;
+		font-weight: bold;
+		color: #e6fbf1;
+	}
+	.cart-note {
+		font-size: 0.85rem;
+		color: #a0cabc;
+		margin: 0.25rem 0 0.75rem;
+	}
+	#cart-checkout {
+		width: 100%;
+		font: inherit;
+		font-weight: bold;
+		background: #4c7a66;
+		color: #e6fbf1;
+		border: none;
+		border-radius: 6px;
+		padding: 0.75rem;
+		cursor: pointer;
+	}
+	#cart-checkout:disabled {
+		opacity: 0.5;
+		cursor: not-allowed;
+	}
+</style>
+
+<script>
+	const KEY = "formosa-cart-v1";
+
+	function read() {
+		try {
+			return JSON.parse(localStorage.getItem(KEY) || "[]");
+		} catch {
+			return [];
+		}
+	}
+	function write(items) {
+		try {
+			localStorage.setItem(KEY, JSON.stringify(items));
+		} catch {
+			/* private mode: cart just won't persist across reloads */
+		}
+		render();
+	}
+
+	function add(slug, name, price) {
+		if (!slug) return;
+		const items = read();
+		const existing = items.find((i) => i.slug === slug);
+		if (existing) existing.qty += 1;
+		else items.push({ slug, name, price, qty: 1 });
+		write(items);
+		openDrawer();
+	}
+	function setQty(slug, qty) {
+		let items = read();
+		if (qty <= 0) {
+			items = items.filter((i) => i.slug !== slug);
+		} else {
+			const it = items.find((i) => i.slug === slug);
+			if (it) it.qty = qty;
+		}
+		write(items);
+	}
+	const count = () => read().reduce((n, i) => n + i.qty, 0);
+	const subtotal = () => read().reduce((s, i) => s + i.price * i.qty, 0);
+
+	const drawer = document.getElementById("cart-drawer");
+	const countEl = document.getElementById("cart-count");
+	const itemsEl = document.getElementById("cart-items");
+	const subtotalEl = document.getElementById("cart-subtotal");
+	const emptyEl = document.getElementById("cart-empty");
+	const checkoutBtn = document.getElementById("cart-checkout");
+
+	const openDrawer = () => {
+		if (drawer) drawer.hidden = false;
+	};
+	const closeDrawer = () => {
+		if (drawer) drawer.hidden = true;
+	};
+
+	function escapeHtml(s) {
+		return String(s).replace(/[&<>"']/g, (c) => ({
+			"&": "&amp;",
+			"<": "&lt;",
+			">": "&gt;",
+			'"': "&quot;",
+			"'": "&#39;",
+		})[c]);
+	}
+
+	function render() {
+		if (!countEl || !itemsEl || !subtotalEl || !emptyEl || !checkoutBtn) return;
+		const items = read();
+		const n = count();
+		countEl.textContent = String(n);
+		countEl.hidden = n === 0;
+
+		if (items.length === 0) {
+			itemsEl.innerHTML = "";
+			emptyEl.hidden = false;
+			checkoutBtn.disabled = true;
+			subtotalEl.innerHTML = "&pound;0.00";
+			return;
+		}
+
+		emptyEl.hidden = true;
+		checkoutBtn.disabled = false;
+		itemsEl.innerHTML = items
+			.map(
+				(i) => `
+			<li class="cart-row" data-slug="${escapeHtml(i.slug)}">
+				<span class="cart-row-name">${escapeHtml(i.name)}</span>
+				<span class="cart-qty">
+					<button type="button" class="qty-dec" aria-label="Decrease quantity">&minus;</button>
+					<span class="qty-num">${i.qty}</span>
+					<button type="button" class="qty-inc" aria-label="Increase quantity">+</button>
+				</span>
+				<span class="cart-row-price">&pound;${(i.price * i.qty).toFixed(2)}</span>
+			</li>`
+			)
+			.join("");
+		subtotalEl.innerHTML = "&pound;" + subtotal().toFixed(2);
+	}
+
+	// One delegated listener handles add buttons, the toggle, close, and +/-.
+	document.addEventListener("click", (e) => {
+		const target = e.target;
+		if (!(target instanceof Element)) return;
+
+		const addBtn = target.closest("[data-add-to-cart]");
+		if (addBtn) {
+			add(
+				addBtn.getAttribute("data-add-to-cart"),
+				addBtn.getAttribute("data-name") || "Item",
+				parseFloat(addBtn.getAttribute("data-price") || "0")
+			);
+			return;
+		}
+		if (target.closest("#cart-toggle")) {
+			drawer && drawer.hidden ? openDrawer() : closeDrawer();
+			return;
+		}
+		if (target.closest("#cart-close")) {
+			closeDrawer();
+			return;
+		}
+		const row = target.closest(".cart-row");
+		if (row) {
+			const slug = row.getAttribute("data-slug");
+			const it = read().find((i) => i.slug === slug);
+			if (!it) return;
+			if (target.classList.contains("qty-inc")) setQty(slug, it.qty + 1);
+			else if (target.classList.contains("qty-dec")) setQty(slug, it.qty - 1);
+		}
+	});
+
+	checkoutBtn?.addEventListener("click", async () => {
+		const items = read().map((i) => ({ slug: i.slug, qty: i.qty }));
+		if (items.length === 0) return;
+		checkoutBtn.disabled = true;
+		const original = checkoutBtn.textContent;
+		checkoutBtn.textContent = "Redirecting…";
+		try {
+			const res = await fetch("/api/checkout", {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify({ items }),
+			});
+			const data = await res.json();
+			if (res.ok && data.url) {
+				window.location.href = data.url;
+				return;
+			}
+			alert(data.error || "Sorry, checkout is unavailable right now.");
+		} catch {
+			alert("Network error — please try again.");
+		}
+		checkoutBtn.disabled = false;
+		checkoutBtn.textContent = original;
+	});
+
+	render();
+</script>
